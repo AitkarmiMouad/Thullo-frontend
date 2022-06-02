@@ -1,7 +1,6 @@
-import type { NextPage } from 'next'
 import React from 'react'
 
-const Auth: NextPage = () => {
+const Auth = () => {
   return (
     <div>index</div>
   )

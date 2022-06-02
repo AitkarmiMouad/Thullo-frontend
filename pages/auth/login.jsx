@@ -1,7 +1,6 @@
-import type { NextPage } from 'next'
 import React from 'react'
 
-const Login: NextPage = () => {
+const Login = () => {
   return (
     <div>login</div>
   )

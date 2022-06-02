@@ -1,11 +1,7 @@
-import React, { useEffect, ReactNode } from "react"
+import React, { useEffect } from "react"
 import { useRouter } from 'next/router'
 
-interface ProtectedRouteProps {
-  component: ReactNode
-}
-
-const ProtectedRoute: any = ({ component }: ProtectedRouteProps) => {
+const ProtectedRoute = ({ component }) => {
   const isAuthenticated = true;
   const router = useRouter()
 

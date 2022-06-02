@@ -1,10 +1,14 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import Login from './auth/login'
 import Boards from './boards/index'
 
-const Home: NextPage = () => {
+import { useStoreState } from 'easy-peasy'
+
+const Home = () => {
+
+  const posts = useStoreState((state) => state.posts);
+
   return (
     <div>
       <Head>
@@ -13,6 +17,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favcon.ico" />
       </Head>
       {true ? <Login/> : <Boards/> }
+      {posts}
     </div>
   )
 }

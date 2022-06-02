@@ -1,7 +1,6 @@
-import type { NextPage } from 'next'
 import React from 'react'
 
-const Register: NextPage = () => {
+const Register = () => {
   return (
     <div>register</div>
   )

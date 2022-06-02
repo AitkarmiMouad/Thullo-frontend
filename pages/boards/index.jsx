@@ -1,10 +1,9 @@
-import type { NextPage } from 'next'
 import React from 'react'
 import ProtectedRoute from '../../components/ProtectedRoute'
 
-const Boards: NextPage = () => {
+const Boards = () => {
   return (
-      <ProtectedRoute component={''}/>
+      <ProtectedRoute component={'hi'}/>
   )
 }
 
