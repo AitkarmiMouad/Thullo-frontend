@@ -1,8 +1,12 @@
 import React from 'react'
+import Login from './login'
+import Boards from '../boards/index'
 
 const Auth = () => {
   return (
-    <div>index</div>
+    <div>
+      {true ? <Login /> : <Boards />}
+    </div>
   )
 }
 
