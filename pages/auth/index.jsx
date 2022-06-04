@@ -1,12 +1,10 @@
 import React from 'react'
-import Login from './login'
 import Boards from '../boards/index'
+import ProtectedRoute from '../../components/ProtectedRoute'
 
 const Auth = () => {
   return (
-    <div>
-      {true ? <Login /> : <Boards />}
-    </div>
+    <ProtectedRoute component={<Boards/>}/>
   )
 }
 

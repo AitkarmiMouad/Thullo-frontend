@@ -1,12 +1,10 @@
-import styles from '../styles/Home.module.scss'
-import Login from './auth/login'
 import Boards from './boards/index'
+import ProtectedRoute from '../components/ProtectedRoute'
+
 
 const Home = () => {
   return (
-    <div>
-      {true ? <Login/> : <Boards/> }
-    </div>
+    <ProtectedRoute component={<Boards />} />
   )
 }
 

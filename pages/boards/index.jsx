@@ -1,9 +1,13 @@
 import React from 'react'
 import ProtectedRoute from '../../components/ProtectedRoute'
+import BoardsComponent from '../../components/BoardsComponent'
+import Layout from '../../components/Layout'
 
 const Boards = () => {
   return (
-      <ProtectedRoute component={'hi'}/>
+    <Layout>
+      <ProtectedRoute component={<BoardsComponent />} />
+    </Layout>
   )
 }
 

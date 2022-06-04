@@ -7,13 +7,13 @@ const ProtectedRoute = ({ component }) => {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      router.push('/')
+        router.push('/auth/login')
     }
   }, [isAuthenticated, router])
 
   return (
     <>
-      {isAuthenticated ? component : <p>Redirecting</p>}
+      {isAuthenticated ? component : <p>Redirecting...</p>}
     </>
   );
 }
