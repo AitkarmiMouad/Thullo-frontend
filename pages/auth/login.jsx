@@ -1,8 +1,9 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import styles from '../../styles/Auth.module.scss'
 import Image from 'next/image'
 import Logo from '../../public/Logo.svg'
+import stylesAuth from '../../styles/Auth.module.scss'
+import stylesComponents from '../../styles/Components.module.scss'
 import { FaFacebookSquare, FaGoogle, FaGithub, FaTwitter } from 'react-icons/fa'
 
 const Login = () => {
@@ -15,30 +16,30 @@ const Login = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div className={stylesAuth.container}>
 
-      <div className={styles.card}>
+      <div className={stylesAuth.card}>
         <div className='mx-auto w-fit my-4 scale-125'>
           <Image src={Logo} alt="Logo" />
         </div>
 
         <form className="mt-6">
           <div>
-            <label htmlFor="username" className={styles.label}>E-mail</label>
-            <input type="text" className={styles.input} />
+            <label htmlFor="username" className={stylesAuth.label}>E-mail</label>
+            <input type="text" className={`${stylesComponents.textBox} mt-2 `}/>
           </div>
 
           <div className="mt-4">
             <div className="flex items-center justify-between">
-              <label htmlFor="password" className={styles.label}>Password</label>
-              <a href="#" className={styles.anchor}>Forget Password?</a>
+              <label htmlFor="password" className={stylesAuth.label}>Password</label>
+              <a href="#" className={stylesAuth.anchor}>Forget Password?</a>
             </div>
 
-            <input type="password" className={styles.input} />
+            <input type="password" className={`${stylesComponents.textBox} mt-2 `} />
           </div>
 
           <div className="mt-6">
-            <button className={`${styles.btn} bg-customblue-300 hover:bg-customblue-200`}>
+            <button className={`${stylesComponents.btnPrimary} w-full`}>
               Login
             </button>
           </div>
@@ -47,7 +48,7 @@ const Login = () => {
         <div className="flex items-center justify-between mt-4">
           <span className="w-1/5 border-b lg:w-1/5"></span>
 
-          <a className={`${styles.anchor} text-center text-gray-500 uppercase cursor-default`}>or login with Social Media</a>
+          <a className={`${stylesAuth.anchor} text-center text-gray-500 uppercase cursor-default`}>or login with Social Media</a>
 
           <span className="w-1/5 border-b lg:w-1/5"></span>
         </div>

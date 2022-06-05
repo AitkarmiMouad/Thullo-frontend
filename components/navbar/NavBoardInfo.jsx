@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaTh } from 'react-icons/fa'
-import styles from '../styles/Navbar.module.scss'
+import stylesComponents from '../../styles/Components.module.scss'
 
 const NavBoardInfo = () => {
   return (
@@ -9,7 +9,7 @@ const NavBoardInfo = () => {
         DevChalenges
       </div>
       <hr className="border-0 bg-gray-400 w-px h-9 m-0" />
-      <button type="button" className={styles.iconbtn}>
+      <button type="button" className={`${stylesComponents.btnSecondary} mx-4 h-10`}>
         <FaTh className='mr-2' />
         Boards
       </button>

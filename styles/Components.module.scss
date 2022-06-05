@@ -1,0 +1,28 @@
+.avatar{
+  @apply object-cover h-10 rounded-lg
+}
+
+.btnPrimary{
+  @apply w-fit px-4 py-3 font-medium rounded-lg text-sm text-center tracking-wide transition-colors duration-200 transform justify-center focus:outline-none inline-flex items-center text-gray-50 bg-customblue-300 hover:bg-customblue-200 active:bg-blue-400;
+}
+
+.btnSecondary{
+  @apply w-fit px-4 py-3 font-medium rounded-lg text-sm text-center tracking-wide transition-colors duration-200 transform justify-center focus:outline-none inline-flex items-center text-customgray-200 bg-customgray-100 active:bg-gray-200
+}
+
+.btnSpan{
+  @apply text-customgray-200 py-2 px-3 rounded-lg active:bg-customgray-100
+}
+
+.textBox{
+  @apply block w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:border-customblue-200 focus:outline-none placeholder-gray-500 pr-2 text-sm outline-none focus:placeholder-transparent;
+}
+
+.searchDiv{
+  @apply flex items-center justify-center h-10 overflow-hidden border rounded-lg border-gray-200 focus-within:border-customblue-200
+}
+
+.containerSection{
+  @apply bg-gray-200 ;
+  min-height: calc(100vh - 70px); // screen height minus nav bar height
+}

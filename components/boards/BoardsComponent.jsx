@@ -1,19 +1,18 @@
 import React from 'react'
 import { FaPlus } from 'react-icons/fa'
-import stylesNavBar from '../styles/Navbar.module.scss'
-import stylesBoard from '../styles/Board.module.scss'
+import stylesComponents from '../../styles/Components.module.scss'
 import BoardCards from './BoardCards'
-import Modal from './Modal'
+import Modal from '../Modal'
 import AddBoard from './AddBoard'
 
 const BoardsComponent = () => {
   const [showModal, setShowModal] = React.useState(false);
   return (
-    <div className={`${stylesBoard.container} bg-customwhite-200 relative`}>
+    <div className={`${stylesComponents.containerSection} bg-customwhite-200 relative`}>
       <div className='flex items-center justify-between mx-28 pt-10'>
         <div className='font-medium'>All Boards</div>
         <button
-          type="button" className={`${stylesNavBar.iconbtn} active:bg-blue-500 bg-customblue-300 text-customwhite-100 font-normal`}
+          type="button" className={`${stylesComponents.btnPrimary}`}
           onClick={() => setShowModal(true)}
         >
           <FaPlus className='mr-2' />
