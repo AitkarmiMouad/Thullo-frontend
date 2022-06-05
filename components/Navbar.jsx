@@ -2,6 +2,8 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import Logo from '../public/Logo.svg'
 import styles from '../styles/Navbar.module.scss'
+import { FaSistrix } from 'react-icons/fa'
+import NavBoardInfo from './NavBoardInfo'
 
 const myLoader = ({ src, width, quality }) => {
   return `https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80`
@@ -13,9 +15,9 @@ const Navbar = () => {
 
   return (
 
-    <div className="bg-white shadow dark:bg-gray-800">
+    <div className="bg-white shadow z-10 relative dark:bg-gray-800">
       <div className="px-6 py-2 mx-auto">
-        <div className="md:flex md:items-center md:justify-between">
+        <div className="flex items-center justify-between">
           <div className="flex items-center justify-between">
             <div className="text-xl font-semibold text-gray-700">
               <div className='grid place-items-center h-full mr-2'>
@@ -24,12 +26,17 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="flex-1 md:flex md:items-center md:justify-end">
-            <div className='hidden md:block mx-6'>
+          {true && <NavBoardInfo />}
+
+          <div className="flex-1 flex items-center justify-end">
+            <div className='hidden lg:block mx-6'>
               <div className={styles.searchdiv}>
                 <input className={styles.input} type="search" name="search" placeholder="Keyword..." aria-label="Keyword..." />
                 <button className={styles.btn}>search</button>
               </div>
+            </div>
+            <div className='lg:hidden mr-4 active:bg-gray-100 p-2.5 rounded-md'>
+              <FaSistrix />
             </div>
 
             <div className='relative inline-block' onClick={() => { setActiveDrop(!activeDrop) }}>
@@ -38,8 +45,8 @@ const Navbar = () => {
                 <div className='grid place-items-center h-full mr-2'>
                   <Image loader={myLoader} src='me.png' height={35} width={35} className='rounded-md' alt='profile pic' />
                 </div>
-                <span className="mx-1">Joe Doe</span>
-                <svg className="w-5 h-5 mx-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <span className="mx-1 hidden md:block font-secondary font-medium">Joe Doe</span>
+                <svg className="w-5 h-5 mx-1 hidden md:block" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 15.713L18.01 9.70299L16.597 8.28799L12 12.888L7.40399 8.28799L5.98999 9.70199L12 15.713Z" fill="currentColor"></path>
                 </svg>
               </button>

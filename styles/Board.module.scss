@@ -1,0 +1,28 @@
+.container{
+  @apply bg-gray-200 ;
+  min-height: calc(100vh - 70px);
+}
+
+.customGrid{
+  @apply mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 pb-16 pt-10 px-24
+}
+
+.card{
+  @apply mx-auto mr-auto w-72 h-72 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800
+}
+
+.pictureCard{
+  @apply m-3 rounded-lg overflow-hidden
+}
+
+.pictureCardImage{
+  @apply object-fill w-full h-40
+}
+
+.pictureAvatar{
+  @apply object-cover h-10 rounded-lg
+}
+
+.span{
+  @apply text-customgray-200 py-2 px-3 rounded-md active:bg-customgray-100
+}
