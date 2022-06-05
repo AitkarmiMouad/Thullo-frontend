@@ -1,15 +1,18 @@
 import React, { useEffect } from "react"
 import { useRouter } from 'next/router'
 
-const ProtectedRoute = ({ component }) => {
+const ProtectedRoute = ({ component, path }) => {
   const isAuthenticated = true;
   const router = useRouter()
 
   useEffect(() => {
     if (!isAuthenticated) {
-        router.push('/auth/login')
+      router.push('/auth/login')
     }
-  }, [isAuthenticated, router])
+    if (isAuthenticated && path !== undefined) {
+      router.push(path, undefined, { shallow: true })
+    }
+  }, [isAuthenticated, router, path])
 
   return (
     <>

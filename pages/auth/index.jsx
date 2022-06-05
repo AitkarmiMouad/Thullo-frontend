@@ -4,7 +4,7 @@ import ProtectedRoute from '../../components/ProtectedRoute'
 
 const Auth = () => {
   return (
-    <ProtectedRoute component={<Boards/>}/>
+    <ProtectedRoute component={<Boards />} path='/' />
   )
 }
 

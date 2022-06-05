@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
 
-    <div className="bg-white shadow z-10 relative dark:bg-gray-800">
+    <div className="bg-white shadow z-10 relative">
       <div className="px-6 py-2 mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-between">
@@ -64,7 +64,7 @@ const Navbar = () => {
                   </span>
                 </a>
 
-                <hr className="border-gray-200 dark:border-gray-700 " />
+                <hr className="border-gray-200 " />
 
                 <a href="#" className={styles.anchor}>
                   <svg className="w-5 h-5 mx-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,7 +77,7 @@ const Navbar = () => {
                   <span className="mx-1">Team</span>
                 </a>
 
-                <hr className="border-gray-200 dark:border-gray-700 " />
+                <hr className="border-gray-200 " />
 
 
                 <a href="#" className={styles.anchor}>

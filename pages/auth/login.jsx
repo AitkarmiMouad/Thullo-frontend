@@ -45,11 +45,11 @@ const Login = () => {
         </form>
 
         <div className="flex items-center justify-between mt-4">
-          <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/5"></span>
+          <span className="w-1/5 border-b lg:w-1/5"></span>
 
           <a className={`${styles.anchor} text-center text-gray-500 uppercase cursor-default`}>or login with Social Media</a>
 
-          <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/5"></span>
+          <span className="w-1/5 border-b lg:w-1/5"></span>
         </div>
 
         <div className="flex items-center mt-6 mx-6 justify-evenly">
@@ -69,7 +69,7 @@ const Login = () => {
 
         <p className="mt-8 text-xs font-light text-center text-gray-400">
           Don&apos;t have an account?
-          <a href="#" className="font-medium text-gray-700 dark:text-gray-200 hover:underline"
+          <a href="#" className="font-medium text-gray-700 hover:underline"
             onClick={(e) => goToRegister(e)}
           >
             Create One

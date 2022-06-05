@@ -25,7 +25,7 @@ const BoardCards = () => {
               <div className="flex items-center mx-1">
                 <img className={styles.pictureAvatar} src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60" alt="Avatar" />
               </div>
-              <span className="mx-1 text-xs text-gray-500 dark:text-gray-300">+ 5 others</span>
+              <span className="mx-1 text-xs text-gray-500">+ 5 others</span>
             </div>
           </div>
         </div>

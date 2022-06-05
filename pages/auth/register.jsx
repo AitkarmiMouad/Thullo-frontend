@@ -16,7 +16,7 @@ const Register = () => {
 
   return (
     <div className={`${styles.container} bg-gray-200`}>
-      <div className="flex sm:mx-auto w-full sm:w-3/5 overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+      <div className="flex sm:mx-auto w-full sm:w-3/5 overflow-hidden bg-white rounded-lg shadow-lg ">
         <div className="hidden bg-cover bg-white border-r border-r-gray-200 lg:block lg:w-1/2 ">
           <div className='grid place-items-center h-full scale-150'>
             <Image src={Logo} alt="Logo" />
@@ -24,9 +24,9 @@ const Register = () => {
         </div>
 
         <div className="w-full px-6 py-8 md:px-8 lg:w-1/2">
-          <h2 className="text-2xl font-semibold text-center text-gray-700 dark:text-white">Thullo</h2>
+          <h2 className="text-2xl font-semibold text-center text-gray-700 ">Thullo</h2>
 
-          <p className="text-xl text-center text-gray-600 dark:text-gray-200">Welcome back!</p>
+          <p className="text-xl text-center text-gray-600 ">Welcome back!</p>
 
           <div className="flex items-center mt-6 mx-6 justify-evenly">
             <button type="button" className='border border-customgray-200 rounded-full hover:border-red-500'>
@@ -44,11 +44,11 @@ const Register = () => {
           </div>
 
           <div className="flex items-center justify-between mt-4">
-            <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/4"></span>
+            <span className="w-1/5 border-b lg:w-1/4"></span>
 
-            <a href="#" className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline">or login with email</a>
+            <a href="#" className="text-xs text-center text-gray-500 uppercase hover:underline">or login with email</a>
 
-            <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/4"></span>
+            <span className="w-1/5 border-b lg:w-1/4"></span>
           </div>
 
           <div className='grid grid-cols-6 gap-4 mt-3'>
@@ -99,11 +99,11 @@ const Register = () => {
           </div>
 
           <div className="flex items-center justify-between mt-4">
-            <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+            <span className="w-1/5 border-b md:w-1/4"></span>
 
             <a href="#" className={`${styles.anchor} text-sm`} onClick={(e) => goToLogin(e)}>or login</a>
 
-            <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+            <span className="w-1/5 border-b md:w-1/4"></span>
           </div>
         </div>
       </div>
