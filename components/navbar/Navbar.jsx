@@ -61,7 +61,7 @@ const Navbar = () => {
                   </svg>
 
                   <span className="mx-1">
-                    view profile
+                    My Profile
                   </span>
                 </a>
 
@@ -75,7 +75,7 @@ const Navbar = () => {
                     <path d="M16 21H14C14 18.2386 11.7614 16 9 16C6.23858 16 4 18.2386 4 21H2C2 17.134 5.13401 14 9 14C12.866 14 16 17.134 16 21Z" fill="currentColor"></path>
                   </svg>
 
-                  <span className="mx-1">Team</span>
+                  <span className="mx-1">Group Chat</span>
                 </a>
 
                 <hr className="border-gray-200 " />

@@ -1,0 +1,4 @@
+.container{
+  @apply bg-customwhite-200 my-4 mx-4 rounded-2xl p-6 flex flex-row gap-10 overflow-x-auto justify-start items-start ;
+  min-height: calc(100vh - 170px); // screen height minus nav bar height
+}

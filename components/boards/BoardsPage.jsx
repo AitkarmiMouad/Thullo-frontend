@@ -5,7 +5,7 @@ import BoardCards from './BoardCards'
 import Modal from '../Modal'
 import AddBoard from './AddBoard'
 
-const BoardsComponent = () => {
+const BoardsPage = () => {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <div className={`${stylesComponents.containerSection} bg-customwhite-200 relative`}>
@@ -30,4 +30,4 @@ const BoardsComponent = () => {
   )
 }
 
-export default BoardsComponent
+export default BoardsPage

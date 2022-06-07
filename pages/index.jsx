@@ -1,10 +1,10 @@
-import Boards from './boards/index'
+import BoardsPage from './boards/BoardsPage'
 import ProtectedRoute from '../components/ProtectedRoute'
 
 
 const Home = () => {
   return (
-    <ProtectedRoute component={<Boards />} />
+    <ProtectedRoute component={<BoardsPage />} />
   )
 }
 

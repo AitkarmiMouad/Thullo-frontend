@@ -1,15 +1,15 @@
 import React from 'react'
 import ProtectedRoute from '../../components/ProtectedRoute'
-import BoardsComponent from '../../components/boards/BoardsComponent'
 import Layout from '../../components/Layout'
+import Boards from '../../components/boards/BoardsPage'
 
-const Boards = () => {
+const BoardsPage = () => {
   return (
     <Layout>
-      <ProtectedRoute component={<BoardsComponent />} />
+      <ProtectedRoute component={<Boards />} />
     </Layout>
   )
 }
 
 
-export default Boards
+export default BoardsPage
