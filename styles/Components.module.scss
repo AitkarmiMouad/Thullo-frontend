@@ -36,5 +36,6 @@
 }
 
 .lightBlueBtn{
-  @apply px-4 py-3 font-medium rounded-lg text-sm text-center tracking-wide transition-colors duration-200 transform focus:outline-none inline-flex items-center active:bg-customblue-100 text-customblue-300 bg-blue-100 w-72 justify-between
+  @apply px-4 py-3 font-medium rounded-lg text-sm text-center tracking-wide transition-colors duration-200 transform focus:outline-none inline-flex items-center active:bg-customblue-100 text-customblue-300 bg-blue-100 w-72 justify-between;
+  min-width: 18rem;
 }

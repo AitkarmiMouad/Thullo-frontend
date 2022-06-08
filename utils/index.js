@@ -1,4 +1,4 @@
-const data = [{
+const Cards = [{
   id: 1,
   icon: "⭕️",
   status: "open",
@@ -24,23 +24,27 @@ const data = [{
   content: "Finish reading Intro to UI/UX"
 }];
 
-const statuses = [{
+const Lists = [{
+  id: 1,
   status: "open",
   icon: "⭕️",
   color: "#EB5A46"
 }, {
+  id: 2,
   status: "in progress",
   icon: "🔆️",
   color: "#00C2E0"
 }, {
+  id: 3,
   status: "in review",
   icon: "📝",
   color: "#C377E0"
 }, {
+  id: 4,
   status: "done",
   icon: "✅",
   color: "#3981DE"
 }];
 
 
-export { data, statuses };
+export { Cards, Lists };

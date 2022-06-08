@@ -1,10 +1,13 @@
-import BoardsPage from './boards/BoardsPage'
+import BoardsPage from '../components/boards/BoardsPage'
 import ProtectedRoute from '../components/ProtectedRoute'
+import Layout from '../components/Layout'
 
 
 const Home = () => {
   return (
-    <ProtectedRoute component={<BoardsPage />} />
+    <Layout>
+      <ProtectedRoute component={<BoardsPage />} />
+    </Layout>
   )
 }
 
