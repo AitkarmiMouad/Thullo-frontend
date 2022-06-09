@@ -38,7 +38,7 @@ const List = ({ children, id, setLists, lists, list }) => {
     hover(item, monitor) {
       // target - dragged  // new - old
       if(monitor.canDrop())
-      if (originalIndex !== item.originalIndex) {;
+      if (originalIndex !== item.originalIndex) {
         setLists([...moveList(lists, findList(id).index, findList(item.id).index)])
       }
     }
