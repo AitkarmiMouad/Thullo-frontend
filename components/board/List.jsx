@@ -55,7 +55,7 @@ const List = ({ children, id, setLists, lists, list }) => {
 
 
   return (
-    <div className={`${isDragging ? 'opacity-0' : ''} flex flex-col w-72 min-w-max`} ref={(node) => drag(drop(node))}>
+    <div className={`${isDragging ? 'opacity-0' : ''} flex flex-col gap-y-8 w-72 min-w-max`} ref={(node) => drag(drop(node))}>
       <div className="flex flex-row justify-between items-center">
         <div className="font-medium">{list.status} {list.icon}</div>
         <button className={`${stylesComponents.btnSecondary} bg-transparent active:bg-gray-200`}>
