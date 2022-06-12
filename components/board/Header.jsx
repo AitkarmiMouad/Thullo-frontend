@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import stylesComponents from '../../styles/Components.module.scss'
+import componentsStyle from '../../styles/Components.module.scss'
 import { FaLock, FaPlus, FaEllipsisH } from 'react-icons/fa'
 import { IoEarth } from 'react-icons/io5'
-import stylesNavBar from '../../styles/Navbar.module.scss'
 import Invitation from './Invitation'
 
-const Header = () => {
+const Header = ({setShowSideBar}) => {
 
   const [visibility, setVisibility] = useState(false)
   const [showInvitation, setShowInvitation] = useState(false)
@@ -13,7 +12,7 @@ const Header = () => {
   return (
     <div className='flex items-center justify-between mx-9 pt-6 relative'>
       <div className='flex items-center justify-start'>
-        <button type="button" className={`${stylesComponents.btnSecondary} mr-1`} onClick={() => { setVisibility(!visibility) }}>
+        <button type="button" className={`${componentsStyle.btnSecondary} mr-1`} onClick={() => { setVisibility(!visibility) }}>
           <FaLock className='mr-2' />
           Private
         </button>
@@ -24,7 +23,7 @@ const Header = () => {
           <div className='font-medium'>
             Visibility
           </div>
-          <div className={stylesComponents.grayLabel}>
+          <div className={componentsStyle.grayLabel}>
             Choose who can see to this board.
           </div>
           <div className={`flex flex-col mt-4`}>
@@ -33,7 +32,7 @@ const Header = () => {
                 <IoEarth className='mr-2' />
                 <div>Public</div>
               </div>
-              <div className={stylesComponents.grayLabel}>
+              <div className={componentsStyle.grayLabel}>
                 Anyone on the internet can see this.
               </div>
             </div>
@@ -44,7 +43,7 @@ const Header = () => {
                 <FaLock className='mr-2' />
                 <div>Private</div>
               </div>
-              <div className={stylesComponents.grayLabel}>
+              <div className={componentsStyle.grayLabel}>
                 Only board members can see this
               </div>
             </div>
@@ -54,17 +53,17 @@ const Header = () => {
 
 
         <div className="flex items-center mx-1">
-          <img className={stylesComponents.avatar} src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60" alt="Avatar" />
+          <img className={componentsStyle.avatar} src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60" alt="Avatar" />
         </div>
         <div className='relative'>
 
-        <button type="button" className={`${stylesComponents.btnPrimary} mx-1 px-3`} onClick={()=>{setShowInvitation(!showInvitation)}}>
+        <button type="button" className={`${componentsStyle.btnPrimary} mx-1 px-3`} onClick={()=>{setShowInvitation(!showInvitation)}}>
           <FaPlus className='text-lg' />
         </button>
         {showInvitation && <Invitation type='board'/> }
         </div>
       </div>
-      <button type="button" className={`${stylesComponents.btnSecondary} self-end`} >
+      <button type="button" className={`${componentsStyle.btnSecondary} self-end`} onClick={()=>{setShowSideBar(true)}} >
         <FaEllipsisH className='mr-2' />
         Show Menu
       </button>

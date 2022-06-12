@@ -2,8 +2,8 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Logo from '../../public/Logo.svg'
-import stylesAuth from '../../styles/Auth.module.scss'
-import stylesComponents from '../../styles/Components.module.scss'
+import authStyle from '../../styles/Auth.module.scss'
+import componentsStyle from '../../styles/Components.module.scss'
 import { FaFacebookSquare, FaGoogle, FaGithub, FaTwitter } from 'react-icons/fa'
 
 const Login = () => {
@@ -16,30 +16,30 @@ const Login = () => {
   }
 
   return (
-    <div className={stylesAuth.container}>
+    <div className={authStyle.container}>
 
-      <div className={stylesAuth.card}>
+      <div className={authStyle.card}>
         <div className='mx-auto w-fit my-4 scale-125'>
           <Image src={Logo} alt="Logo" />
         </div>
 
         <form className="mt-6">
           <div>
-            <label htmlFor="username" className={stylesAuth.label}>E-mail</label>
-            <input type="text" className={`${stylesComponents.textBox} mt-2 `}/>
+            <label htmlFor="username" className={authStyle.label}>E-mail</label>
+            <input type="text" className={`${componentsStyle.textBox} mt-2 `}/>
           </div>
 
           <div className="mt-4">
             <div className="flex items-center justify-between">
-              <label htmlFor="password" className={stylesAuth.label}>Password</label>
-              <a href="#" className={stylesAuth.anchor}>Forget Password?</a>
+              <label htmlFor="password" className={authStyle.label}>Password</label>
+              <a href="#" className={authStyle.anchor}>Forget Password?</a>
             </div>
 
-            <input type="password" className={`${stylesComponents.textBox} mt-2 `} />
+            <input type="password" className={`${componentsStyle.textBox} mt-2 `} />
           </div>
 
           <div className="mt-6">
-            <button className={`${stylesComponents.btnPrimary} w-full`}>
+            <button className={`${componentsStyle.btnPrimary} w-full`}>
               Login
             </button>
           </div>
@@ -48,7 +48,7 @@ const Login = () => {
         <div className="flex items-center justify-between mt-4">
           <span className="w-1/5 border-b lg:w-1/5"></span>
 
-          <a className={`${stylesAuth.anchor} text-center text-gray-500 uppercase cursor-default`}>or login with Social Media</a>
+          <a className={`${authStyle.anchor} text-center text-gray-500 uppercase cursor-default`}>or login with Social Media</a>
 
           <span className="w-1/5 border-b lg:w-1/5"></span>
         </div>

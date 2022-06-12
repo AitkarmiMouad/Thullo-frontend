@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import stylesKanban from '../../styles/Kanban.module.scss'
-import stylesComponents from '../../styles/Components.module.scss'
+import kanbanStyle from '../../styles/Kanban.module.scss'
+import componentsStyle from '../../styles/Components.module.scss'
 import Card from "./Card";
 import List from "./List";
 import { FaPlus } from 'react-icons/fa'
@@ -16,7 +16,7 @@ const Kanban = () => {
   const [, drop] = useDrop(() => ({ accept: ITEM_TYPE.KANBAN }))
 
   return (
-    <div className={`${stylesKanban.container} relative kanban`} ref={drop} >
+    <div className={`${kanbanStyle.container} relative kanban`} ref={drop} >
       {/* Lists */}
       {lists.map((list) => {
         return (
@@ -34,7 +34,7 @@ const Kanban = () => {
 
 
       {/* add list btn */}
-      <button className={`${stylesComponents.lightBlueBtn}`} >
+      <button className={`${componentsStyle.lightBlueBtn}`} >
         Add another list
         <FaPlus className='ml-2' />
       </button>

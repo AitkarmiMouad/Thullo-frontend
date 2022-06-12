@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaPlus } from 'react-icons/fa'
-import stylesComponents from '../../styles/Components.module.scss'
+import componentsStyle from '../../styles/Components.module.scss'
 import BoardCards from './BoardCards'
 import Modal from '../Modal'
 import AddBoard from './AddBoard'
@@ -8,11 +8,11 @@ import AddBoard from './AddBoard'
 const BoardsPage = () => {
   const [showModal, setShowModal] = React.useState(false);
   return (
-    <div className={`${stylesComponents.containerSection} bg-customwhite-200 relative`}>
+    <div className={`${componentsStyle.containerSection} bg-customwhite-200 relative`}>
       <div className='flex items-center justify-between mx-28 pt-10'>
         <div className='font-medium'>All Boards</div>
         <button
-          type="button" className={`${stylesComponents.btnPrimary}`}
+          type="button" className={`${componentsStyle.btnPrimary}`}
           onClick={() => setShowModal(true)}
         >
           <FaPlus className='mr-2' />

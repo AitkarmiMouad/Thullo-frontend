@@ -1,0 +1,5 @@
+.sideBarContainer{
+  @apply absolute z-40 bg-white right-0 p-6 shadow-xl ;
+  min-height: calc(100% - 55px ); // screen height minus nav bar height and a margin
+  min-width: calc(400px);
+}
