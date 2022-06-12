@@ -5,7 +5,7 @@ import { FaSistrix } from 'react-icons/fa'
 
 const Invitation = ({ type }) => {
   return (
-    <div className={`absolute z-30 w-96 p-4 mt-2 overflow-hidden border bg-white rounded-md shadow-xl left-0 top-10 `}>
+    <div className={`absolute z-10 w-96 p-4 mt-2 overflow-hidden border bg-white rounded-md shadow-xl left-0 top-10 `}>
       <div className='flex flex-col gap-y-3'>
         <div>
           <div className='font-medium'>
@@ -25,7 +25,7 @@ const Invitation = ({ type }) => {
           </div>
         </div>
 
-        <div className={`z-50 w-full p-2 mt-2 overflow-hidden border bg-white rounded-md shadow-xl left-0 top-10 `}>
+        <div className={`z-10 w-full p-2 mt-2 overflow-hidden border bg-white rounded-md shadow-xl left-0 top-10 `}>
           <div className='flex flex-col gap-y-1'>
 
             <div className='active:bg-gray-300 hover:bg-gray-200 rounded-lg p-3'>
