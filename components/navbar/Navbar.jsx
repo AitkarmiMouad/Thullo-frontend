@@ -52,7 +52,7 @@ const Navbar = () => {
                 </svg>
               </button>
 
-              <div className={`${stylesNavBar.dropDownMenu} ${!activeDrop ? 'hidden' : ''}`}>
+              <div className={`${stylesNavBar.dropDownMenu} ${!activeDrop ? 'hidden' : ''} right-0 `}>
 
                 <a href="#" className={stylesNavBar.anchorDropDown}>
                   <svg className="w-5 h-5 mx-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +65,7 @@ const Navbar = () => {
                   </span>
                 </a>
 
-                <hr className="border-gray-200 " />
+                <hr className="border-g ray-200 " />
 
                 <a href="#" className={stylesNavBar.anchorDropDown}>
                   <svg className="w-5 h-5 mx-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

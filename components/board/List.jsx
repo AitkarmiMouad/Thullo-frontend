@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { FaEllipsisH } from 'react-icons/fa'
 import stylesComponents from '../../styles/Components.module.scss'
 import { useDrag, useDrop } from "react-dnd";
 import ITEM_TYPE from "../../utils/types";
+import { FaPlus } from 'react-icons/fa'
+import stylesBoard from '../../styles/Board.module.scss'
+import TextareaAutosize from 'react-textarea-autosize';
 
 const List = ({ children, id, setLists, lists, list }) => {
+
+  const [addCard, setAddCard] = useState(false);
+  const [paramList, setParamList] = useState(false);
 
   const findList = (id) => {
     const list = lists.filter((l) => l.id === id)[0]
@@ -31,16 +37,16 @@ const List = ({ children, id, setLists, lists, list }) => {
     accept: ITEM_TYPE.LIST,
     drop(item, monitor) {
       // target - dragged  // new - old
-      if (originalIndex !== item.originalIndex) {;
+      if (originalIndex !== item.originalIndex) {
         setLists([...moveList(lists, findList(id).index, findList(item.id).index)])
       }
     },
     hover(item, monitor) {
       // target - dragged  // new - old
-      if(monitor.canDrop())
-      if (originalIndex !== item.originalIndex) {
-        setLists([...moveList(lists, findList(id).index, findList(item.id).index)])
-      }
+      if (monitor.canDrop())
+        if (originalIndex !== item.originalIndex) {
+          setLists([...moveList(lists, findList(id).index, findList(item.id).index)])
+        }
     }
   }))
 
@@ -55,14 +61,33 @@ const List = ({ children, id, setLists, lists, list }) => {
 
 
   return (
-    <div className={`${isDragging ? 'opacity-0' : ''} flex flex-col gap-y-8 w-72 min-w-max`} ref={(node) => drag(drop(node))}>
+    <div className={`${isDragging ? 'opacity-0' : ''} flex flex-col gap-y-8 w-72 min-w-max relative`} ref={(node) => drag(drop(node))}>
       <div className="flex flex-row justify-between items-center">
         <div className="font-medium">{list.status} {list.icon}</div>
-        <button className={`${stylesComponents.btnSecondary} bg-transparent active:bg-gray-200`}>
+        <button className={`${stylesComponents.btnSecondary} bg-transparent active:bg-gray-200`} onClick={() => { setParamList(!paramList) }}>
           <FaEllipsisH className='' />
         </button>
+        <div className={`absolute z-20 w-fit p-4 mt-2 overflow-hidden border bg-white rounded-md shadow-xl ${!paramList ? 'hidden' : ''} -right-28 top-8 `}>
+          <button className={`${stylesComponents.btnSpan} w-full`}>
+            Rename
+          </button>
+          <hr className="border-gray-200 " />
+          <button className={`${stylesComponents.btnSpan} w-full`}>
+            Delete
+          </button>
+        </div>
       </div>
       {children}
+      <div className={`${!addCard ? 'hidden' : ''} ${stylesBoard.card} h-full p-3`}>
+        <div className=''>
+          <TextareaAutosize minRows={1} className={`${stylesComponents.textBox} resize-none border-0`} placeholder="Enter a title for this card..." aria-label="Enter a title for this card..." />
+          <button className={`${stylesComponents.btnPrimary} bg-green-800 active:bg-green-600 my-3 h-full`}>save</button>
+        </div>
+      </div>
+      <button className={`${stylesComponents.lightBlueBtn}`} onClick={() => { setAddCard(!addCard) }}>
+        Add another card
+        <FaPlus className='ml-2' />
+      </button>
     </div>
   )
 };

@@ -11,7 +11,6 @@ import ITEM_TYPE from "../../utils/types";
 const Kanban = () => {
 
   const [lists, setLists] = useState(Lists);
-  // const [cards, setCards] = useState(Cards);
 
 
   const [, drop] = useDrop(() => ({ accept: ITEM_TYPE.KANBAN }))
@@ -27,15 +26,15 @@ const Kanban = () => {
                 <Card key={card.id} id={card.id} setLists={setLists} lists={lists} list={list} cards={list.cards} card={card} />
               ))
             }
-            <button className={`${stylesComponents.lightBlueBtn}`}>
-              Add another card
-              <FaPlus className='ml-2' />
-            </button>
+            
           </List>
         )
       })}
+
+
+
       {/* add list btn */}
-      <button className={`${stylesComponents.lightBlueBtn}`}>
+      <button className={`${stylesComponents.lightBlueBtn}`} >
         Add another list
         <FaPlus className='ml-2' />
       </button>

@@ -7,9 +7,9 @@ import { FaFacebookSquare, FaGoogle, FaGithub, FaTwitter } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 
 const Register = () => {
-
+  
   const router = useRouter()
-
+  
   const goToLogin = (e) => {
     e.preventDefault()
     router.push('/auth/login')

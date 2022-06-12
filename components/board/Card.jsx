@@ -4,8 +4,11 @@ import stylesBoard from '../../styles/Board.module.scss'
 import stylesComponents from '../../styles/Components.module.scss'
 import ITEM_TYPE from "../../utils/types";
 import { FaComments, FaPlus, FaPaperclip } from 'react-icons/fa'
+import Invitation from "./Invitation";
 
 const Card = ({ id, card, setLists, lists, list }) => {
+
+  const [showInvitation, setShowInvitation] = useState(false)
 
   const findCard = (id, List) => {
     const card = List.cards.filter((c) => c.id === id)[0]
@@ -28,8 +31,6 @@ const Card = ({ id, card, setLists, lists, list }) => {
   const originalCardIndex = findCard(id, list).index
 
   function moveCard(arr, newCardIndex, oldCardIndex, newListIndex, oldListIndex, card, didDrop) {
-
-    console.log(newCardIndex, oldCardIndex, newListIndex, oldListIndex);
 
     if (oldListIndex === newListIndex) {
       if (newCardIndex > arr[oldListIndex].cards.length) {
@@ -108,7 +109,7 @@ const Card = ({ id, card, setLists, lists, list }) => {
   return (
     <div className={`rounded-2xl ${isOver ? 'bg-blue-100 border border-dashed border-customblue-300' : 'bg-red-100'}`}>
       <div
-        className={`${stylesBoard.card} m-0 w-full h-fit py-4 px-3 rounded-2xl ${isDragging ? 'opacity-0' : ''} `}
+        className={`${stylesBoard.card} overflow-visible m-0 w-full h-fit py-4 px-3 rounded-2xl ${isDragging ? 'opacity-0' : ''} `}
         ref={(node) => drag(drop(node))} >
         <div className={`${stylesBoard.pictureCard} m-0`}>
           <img className={`${stylesBoard.pictureCardImage} h-36`} src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article" />
@@ -122,9 +123,13 @@ const Card = ({ id, card, setLists, lists, list }) => {
             <div className="flex items-center mx-1">
               <img className={stylesComponents.avatar} src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60" alt="Avatar" />
             </div>
-            <button type="button" className={`${stylesComponents.btnPrimary} mx-1 px-3`}>
-              <FaPlus className='text-lg' />
-            </button>
+            <div className="relative">
+              <button type="button" className={`${stylesComponents.btnPrimary} mx-1 px-3`} onClick={() => { setShowInvitation(!showInvitation) }}>
+                <FaPlus className='text-lg' />
+              </button>
+              {showInvitation && <Invitation type='card' />}
+            </div>
+
           </div>
           <div className="flex items-center justify-end w-28">
             <div className={`${stylesComponents.grayLabel} px-0 ml-2`}>
