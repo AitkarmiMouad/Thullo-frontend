@@ -11,8 +11,8 @@ const BoardPage = () => {
   return (
     <div className={`${componentsStyle.containerSection} bg-white`}>
       {showSideBar && <SideBar setShowSideBar={setShowSideBar} />}
-      <Header setShowSideBar={setShowSideBar}/>
-      <Kanban/>
+      <Header setShowSideBar={setShowSideBar} />
+      <Kanban />
     </div>
   )
 }

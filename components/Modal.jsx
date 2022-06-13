@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const Modal = ({ children, showModal, setShowModal }) => {
+const Modal = ({ children, showModal, setShowModal , goBackTo}) => {
+
   return (
     <>
       {showModal ? (
         <>
           <div
             className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-            onClick={(e) => setShowModal(false)}
+            onClick={(e) => {setShowModal(false); goBackTo && goBackTo() }}
           >
             <div className="relative w-auto my-6 mx-auto max-w-3xl h-auto"
               onClick={(e) => e.stopPropagation()}

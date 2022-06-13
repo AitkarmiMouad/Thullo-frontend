@@ -5,8 +5,9 @@ import componentsStyle from '../../styles/Components.module.scss'
 import ITEM_TYPE from "../../utils/types";
 import { FaComments, FaPlus, FaPaperclip } from 'react-icons/fa'
 import Invitation from "./Invitation";
+import Link from 'next/link'
 
-const Card = ({ id, card, setLists, lists, list }) => {
+const Card = ({ id, card, setLists, lists, list, setShowModal }) => {
 
   const [showInvitation, setShowInvitation] = useState(false)
 
@@ -75,8 +76,6 @@ const Card = ({ id, card, setLists, lists, list }) => {
 
         setLists([...moveCard(lists, newCardIndex, oldCardIndex, newListIndex, oldListIndex, item.card, true)])
 
-
-
       }
 
     },
@@ -106,44 +105,48 @@ const Card = ({ id, card, setLists, lists, list }) => {
   }
   ))
 
-  return (
-    <div className={`rounded-2xl ${isOver ? 'bg-blue-100 border border-dashed border-customblue-300' : 'bg-red-100'}`}>
-      <div
-        className={`${boardStyle.card} overflow-visible m-0 w-full h-fit py-4 px-3 rounded-2xl ${isDragging ? 'opacity-0' : ''} `}
-        ref={(node) => drag(drop(node))} >
-        <div className={`${boardStyle.pictureCard} m-0`}>
-          <img className={`${boardStyle.pictureCardImage} h-36`} src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article" />
-        </div>
-        <div className="my-3 font-medium">{card.title} {card.icon}</div>
-        <div className="flex flex-wrap">
-          <div className={`${componentsStyle.chip}`}>Default</div>
-        </div>
-        <div className="my-3 flex items-center justify-between">
-          <div className="flex items-center justify-start">
-            <div className="flex items-center mx-1">
-              <img className={componentsStyle.avatar} src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60" alt="Avatar" />
-            </div>
-            <div className="relative">
-              <button type="button" className={`${componentsStyle.btnPrimary} mx-1 px-3`} onClick={() => { setShowInvitation(!showInvitation) }}>
-                <FaPlus className='text-lg' />
-              </button>
-              {showInvitation && <Invitation type='card' />}
-            </div>
+  // u have to change 1 with dynamic value
 
+  return (
+    <Link href={`/b/[idBoard]/?idBoard=1`} as={`/c/1`}>
+      <div className={`rounded-2xl ${isOver ? 'bg-blue-100 border border-dashed border-customblue-300' : 'bg-red-100'}`} onClick={() => { setShowModal(true) }}>
+        <div
+          className={`${boardStyle.card} overflow-visible m-0 w-full h-fit py-4 px-3 rounded-2xl ${isDragging ? 'opacity-0' : ''} `}
+          ref={(node) => drag(drop(node))} >
+          <div className={`${boardStyle.pictureCard} m-0`}>
+            <img className={`${boardStyle.pictureCardImage} h-36`} src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article" />
           </div>
-          <div className="flex items-center justify-end w-28">
-            <div className={`${componentsStyle.grayLabel} px-0 ml-2`}>
-              <FaComments className="mr-2" />
-              <span>1</span>
+          <div className="my-3 font-medium">{card.title} {card.icon}</div>
+          <div className="flex flex-wrap">
+            <div className={`${componentsStyle.chip}`}>Default</div>
+          </div>
+          <div className="my-3 flex items-center justify-between">
+            <div className="flex items-center justify-start">
+              <div className="flex items-center mx-1">
+                <img className={componentsStyle.avatar} src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60" alt="Avatar" />
+              </div>
+              <div className="relative">
+                <button type="button" className={`${componentsStyle.btnPrimary} mx-1 px-3`} onClick={() => { setShowInvitation(!showInvitation) }}>
+                  <FaPlus className='text-lg' />
+                </button>
+                {showInvitation && <Invitation type='card' />}
+              </div>
+
             </div>
-            <div className={`${componentsStyle.grayLabel} px-0 ml-2`}>
-              <FaPaperclip className="mr-2" />
-              <span>2</span>
+            <div className="flex items-center justify-end w-28">
+              <div className={`${componentsStyle.grayLabel} px-0 ml-2`}>
+                <FaComments className="mr-2" />
+                <span>1</span>
+              </div>
+              <div className={`${componentsStyle.grayLabel} px-0 ml-2`}>
+                <FaPaperclip className="mr-2" />
+                <span>2</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
