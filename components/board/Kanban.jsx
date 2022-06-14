@@ -23,6 +23,7 @@ const Kanban = () => {
   return (
     <div className={`${kanbanStyle.container} relative kanban`} ref={drop} >
 
+      {/* Card Modal */}
       <Modal showModal={showModal} setShowModal={setShowModal} goBackTo={() => { router.push('/b/[idBoard]/?idBoard=1') }} >
         <CardInfo setShowModal={setShowModal} />
       </Modal>
@@ -36,7 +37,6 @@ const Kanban = () => {
                 <Card key={card.id} id={card.id} setLists={setLists} lists={lists} list={list} cards={list.cards} card={card} setShowModal={setShowModal} />
               ))
             }
-
           </List>
         )
       })}

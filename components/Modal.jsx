@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const Modal = ({ children, showModal, setShowModal , goBackTo}) => {
 
@@ -7,10 +7,10 @@ const Modal = ({ children, showModal, setShowModal , goBackTo}) => {
       {showModal ? (
         <>
           <div
-            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            className="justify-center items-start flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
             onClick={(e) => {setShowModal(false); goBackTo && goBackTo() }}
           >
-            <div className="relative w-auto my-6 mx-auto max-w-3xl h-auto"
+            <div className="relative w-auto my-6 mx-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {children}

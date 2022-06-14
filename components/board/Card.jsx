@@ -109,7 +109,7 @@ const Card = ({ id, card, setLists, lists, list, setShowModal }) => {
 
   return (
     <Link href={`/b/[idBoard]/?idBoard=1`} as={`/c/1`}>
-      <div className={`rounded-2xl ${isOver ? 'bg-blue-100 border border-dashed border-customblue-300' : 'bg-red-100'}`} onClick={() => { setShowModal(true) }}>
+      <div className={`rounded-2xl ${isOver ? 'bg-blue-100 border border-dashed border-customblue-300' : 'bg-red-100'}`} onClick={(e) => { setShowModal(true) }}>
         <div
           className={`${boardStyle.card} overflow-visible m-0 w-full h-fit py-4 px-3 rounded-2xl ${isDragging ? 'opacity-0' : ''} `}
           ref={(node) => drag(drop(node))} >
@@ -126,7 +126,7 @@ const Card = ({ id, card, setLists, lists, list, setShowModal }) => {
                 <img className={componentsStyle.avatar} src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60" alt="Avatar" />
               </div>
               <div className="relative">
-                <button type="button" className={`${componentsStyle.btnPrimary} mx-1 px-3`} onClick={() => { setShowInvitation(!showInvitation) }}>
+                <button type="button" className={`${componentsStyle.btnPrimary} mx-1 px-3`} onClick={(e) => { e.stopPropagation(); setShowInvitation(!showInvitation) }}>
                   <FaPlus className='text-lg' />
                 </button>
                 {showInvitation && <Invitation type='card' />}

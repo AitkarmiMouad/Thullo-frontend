@@ -9,7 +9,7 @@ const Invitation = ({ type }) => {
       <div className='flex flex-col gap-y-3'>
         <div>
           <div className='font-medium'>
-            Invite to {type === 'board' ? 'Board' : 'Card'}
+            Invite to {type}
           </div>
           <div className={componentsStyle.grayLabel}>
             Search users you want to invite to
