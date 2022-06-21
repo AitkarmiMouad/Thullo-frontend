@@ -1,5 +1,5 @@
 import React from 'react'
-import Boards from '../boards/index'
+import Boards from '../b/index'
 import ProtectedRoute from '../../components/ProtectedRoute'
 
 const Auth = () => {

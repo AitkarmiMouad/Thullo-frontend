@@ -34,7 +34,7 @@ const Kanban = () => {
           <List key={list.id} id={list.id} setLists={setLists} lists={lists} list={list} >
             {
               list.cards.map(card => (
-                <Card key={card.id} id={card.id} setLists={setLists} lists={lists} list={list} cards={list.cards} card={card} setShowModal={setShowModal} />
+                <Card key={card.id} id={card.id} setLists={setLists} lists={lists} list={list} card={card} setShowModal={setShowModal} />
               ))
             }
           </List>
