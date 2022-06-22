@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { useRouter } from 'next/router'
 
 const ProtectedRoute = ({ component, path }) => {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   const router = useRouter()
 
   useEffect(() => {

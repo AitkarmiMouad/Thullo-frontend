@@ -1,18 +1,46 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Logo from '../../public/Logo.svg'
 import authStyle from '../../styles/Auth.module.scss'
 import componentsStyle from '../../styles/Components.module.scss'
 import { FaFacebookSquare, FaGoogle, FaGithub, FaTwitter } from 'react-icons/fa'
+import { gql, useMutation } from '@apollo/client'
 
 const Login = () => {
 
   const router = useRouter()
 
+  const [email, setEmail] = useState('')
+  const [pwd, setPwd] = useState('')
+
   const goToRegister = (e) => {
     e.preventDefault()
     router.push('/auth/register')
+  }
+
+  const LOGIN = gql`
+    mutation($input: LoginInput!) {
+  login(input: $input)
+}
+  `
+
+  const [login, { error , data }] = useMutation(LOGIN);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    await login({
+      variables: {
+        input: {
+          email: email,
+          password: pwd,
+        }
+      },
+    });
+
+    router.push('/b')
+
   }
 
   return (
@@ -23,19 +51,17 @@ const Login = () => {
           <Image src={Logo} alt="Logo" />
         </div>
 
-        <form className="mt-6">
+        <form className="mt-6" onSubmit={(e) => handleSubmit(e)}>
           <div>
             <label htmlFor="username" className={authStyle.label}>E-mail</label>
-            <input type="text" className={`${componentsStyle.textBox} mt-2 `}/>
+            <input type="text" className={`${componentsStyle.textBox} mt-2 `} value={email}
+              onChange={(e) => setEmail(e.target.value)}/>
           </div>
 
           <div className="mt-4">
-            <div className="flex items-center justify-between">
-              <label htmlFor="password" className={authStyle.label}>Password</label>
-              <a href="#" className={authStyle.anchor}>Forget Password?</a>
-            </div>
-
-            <input type="password" className={`${componentsStyle.textBox} mt-2 `} />
+            <label htmlFor="password" className={authStyle.label}>Password</label>
+            <input type="password" className={`${componentsStyle.textBox} mt-2 `} value={pwd}
+              onChange={(e) => setPwd(e.target.value)} />
           </div>
 
           <div className="mt-6">
@@ -54,17 +80,14 @@ const Login = () => {
         </div>
 
         <div className="flex items-center mt-6 mx-6 justify-evenly">
-          <button type="button" className='border border-customgray-200 rounded-full hover:border-red-500'>
+          <button type="button" className='border border-customgray-200 rounded-full hover:border-red-500' onClick={() => { router.push('http://localhost:4000/auth/google') }}>
             <FaGoogle className='text-customgray-200 text-4xl p-2 hover:text-red-500' />
           </button>
-          <button type="button" className='border border-customgray-200 rounded-full hover:border-blue-600'>
+          <button type="button" className='border border-customgray-200 rounded-full hover:border-blue-600' onClick={() => { router.push('http://localhost:4000/auth/facebook') }}>
             <FaFacebookSquare className='text-customgray-200 text-4xl p-2 hover:text-blue-600' />
           </button>
-          <button type="button" className='border border-customgray-200 rounded-full hover:border-gray-800'>
+          <button type="button" className='border border-customgray-200 rounded-full hover:border-gray-800' onClick={() => { router.push('http://localhost:4000/auth/github') }}>
             <FaGithub className='text-customgray-200 text-4xl p-2 hover:text-gray-800' />
-          </button>
-          <button type="button" className='border border-customgray-200 rounded-full hover:border-blue-400'>
-            <FaTwitter className='text-customgray-200 text-4xl p-2 hover:text-blue-400' />
           </button>
         </div>
 
